@@ -1,4 +1,11 @@
-<p class="term" (mouseenter)="showTooltip()" (mouseleave)="hideTooltip()">DOM</p>
-<div class="tooltip" [class.visible]="show">
+<p class="term" (mouseover)="showTooltip(); changeMouseCoordinates($event.x, $event.y)" (mouseleave)="hideTooltip()">
+  DOM
+</p>
+<div class="tooltip" [style.left.px]="mouseCoordinates['x']" [style.top.px]="mouseCoordinates['y']"
+  [class.visible]="show">
   <p>Lorem</p>
 </div>
+<!-- <div class="tooltip" style="left: {{mouseCoordinates['x']}}px; top: {{mouseCoordinates['y']}}px;"
+  [class.visible]="show">
+  <p>Lorem</p>
+</div> -->

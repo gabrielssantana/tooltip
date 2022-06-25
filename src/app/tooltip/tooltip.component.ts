@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TooltipComponent implements OnInit {
   public show = false;
+  public mouseCoordinates = { x: 0, y: 0 };
 
   constructor() { }
 
@@ -21,4 +22,7 @@ export class TooltipComponent implements OnInit {
     this.show = false
   }
 
+  changeMouseCoordinates(x: number, y: number) {
+    this.mouseCoordinates = { x, y }
+  }
 }
